@@ -7,366 +7,1206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nexora Consultancy | Nexora Talent Solutions 2.0</title>
+<title>NEXORA CONSULTANCY | NEXORA CONSULTANCY 2026</title>
 
-<meta name="description" content="Nexora Consultancy - Training, Placement Services and Career Solutions. Connecting talented candidates with suitable career opportunities across IT and Non-IT sectors.">
+<meta name="description" content="NEXORA CONSULTANCY 2026 - Professional recruitment, placement, training and career solutions across IT and Non-IT sectors.">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #07111f;
-    color: #ffffff;
-    line-height: 1.6;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8fc;
+    color:#172b4d;
+    overflow-x:hidden;
 }
 
-/* HEADER */
-
-header {
-    background: #081827;
-    padding: 18px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #19334d;
+a{
+    text-decoration:none;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: #39a9ff;
-    white-space: nowrap;
+img{
+    max-width:100%;
+    display:block;
 }
 
-.logo span {
-    color: #ffffff;
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --blue:#1167b1;
+    --blue2:#1689e8;
+    --cyan:#36b9ff;
+    --dark:#071a2d;
+    --dark2:#0c2943;
+    --text:#172b4d;
+    --muted:#66788a;
+    --light:#f5f8fc;
+    --white:#ffffff;
+    --border:#e1eaf3;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 18px;
-    font-size: 14px;
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(20,60,90,.08);
+    transition:.35s ease;
 }
 
-nav a:hover {
-    color: #39a9ff;
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    min-height:78px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
 
-/* HERO */
+/* Navigation LEFT */
 
-.hero {
-    min-height: calc(100vh - 90px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 90px 6% 70px;
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
 
+nav a{
+    color:#243b53;
+    font-size:13px;
+    font-weight:700;
+    position:relative;
+    transition:.3s;
+}
+
+nav a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--blue2);
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--blue2);
+}
+
+nav a:hover:after{
+    width:100%;
+}
+
+/* BRAND RIGHT */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    order:2;
+}
+
+.brand-icon{
+    width:45px;
+    height:45px;
+    border-radius:13px;
+    background:linear-gradient(145deg,#0b5da7,#39b9ff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    font-weight:900;
+    box-shadow:
+        0 9px 25px rgba(17,103,177,.28),
+        inset 0 2px 3px rgba(255,255,255,.35);
+    animation:logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-4px) rotate(1deg);
+    }
+}
+
+.brand-name{
+    font-size:18px;
+    font-weight:900;
+    letter-spacing:1.2px;
+    color:#102a43;
+}
+
+.brand-name span{
+    color:var(--blue2);
+}
+
+.brand-sub{
+    font-size:8px;
+    letter-spacing:2px;
+    color:#7b8794;
+    margin-top:2px;
+    display:block;
+}
+
+/* MENU BUTTON */
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:transparent;
+    font-size:29px;
+    color:#172b4d;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
     background:
-        radial-gradient(circle at top right, #12395c, transparent 42%),
-        linear-gradient(135deg, #07111f, #0b1d31);
+        linear-gradient(
+            90deg,
+            rgba(4,22,39,.94) 0%,
+            rgba(4,22,39,.78) 48%,
+            rgba(4,22,39,.38) 100%
+        ),
+        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=85");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
-.hero-content {
-    max-width: 850px;
-    width: 100%;
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 80% 30%,rgba(54,185,255,.18),transparent 28%),
+        linear-gradient(transparent 70%,rgba(0,0,0,.3));
+    pointer-events:none;
 }
 
-.hero h1 {
-    font-size: clamp(34px, 7vw, 54px);
-    line-height: 1.2;
-    margin-bottom: 20px;
+.hero-inner{
+    width:100%;
+    max-width:1250px;
+    margin:auto;
+    padding:130px 5% 90px;
+    position:relative;
+    z-index:2;
 }
 
-.hero h1 span {
-    color: #39a9ff;
+.hero-content{
+    max-width:750px;
+    animation:heroIn 1.2s ease forwards;
 }
 
-.hero h2 {
-    font-size: clamp(20px, 4vw, 27px);
-    color: #d7eaff;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 720px;
-    margin: auto;
-    color: #b9c8d8;
-    font-size: clamp(15px, 3vw, 18px);
-    line-height: 1.8;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 27px;
-    border-radius: 8px;
-    background: #1689e8;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #39a9ff;
-    transform: translateY(-2px);
-}
-
-/* SECTIONS */
-
-section {
-    padding: 75px 6%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title h2 {
-    font-size: clamp(28px, 5vw, 36px);
-    color: #39a9ff;
-    margin-bottom: 8px;
-}
-
-.section-title p {
-    color: #aebdcc;
-}
-
-/* ABOUT */
-
-.about {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    color: #c4d0dc;
-    font-size: 16px;
-}
-
-.founder {
-    margin-top: 30px;
-    padding: 22px;
-    background: #0d2033;
-    border: 1px solid #1b3a56;
-    border-radius: 12px;
-}
-
-.founder-title {
-    color: #39a9ff;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.founder-name {
-    margin-top: 5px;
-    font-size: 21px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-/* SERVICES */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.card {
-    background: #0d2033;
-    padding: 30px 22px;
-    border-radius: 12px;
-    border: 1px solid #1b3a56;
-    text-align: center;
-}
-
-.card h3 {
-    color: #39a9ff;
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.card p {
-    color: #b8c6d4;
-    font-size: 14px;
-}
-
-/* JOBS */
-
-.jobs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-}
-
-.job {
-    background: #0d2033;
-    padding: 28px;
-    border-radius: 12px;
-    border-left: 4px solid #39a9ff;
-}
-
-.job h3 {
-    color: #ffffff;
-    margin-bottom: 14px;
-    font-size: 21px;
-}
-
-.job p {
-    color: #b8c6d4;
-    margin: 6px 0;
-}
-
-.job strong {
-    color: #39a9ff;
-}
-
-/* CONTACT */
-
-.contact {
-    background: #0a1929;
-}
-
-.contact-box {
-    max-width: 720px;
-    margin: auto;
-    background: #0d2033;
-    padding: 35px;
-    border-radius: 14px;
-    border: 1px solid #1b3a56;
-    text-align: center;
-}
-
-.contact-box p {
-    margin: 13px 0;
-    color: #d0dbe6;
-}
-
-.contact-box strong {
-    color: #ffffff;
-}
-
-.contact-box a {
-    color: #39a9ff;
-    text-decoration: none;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 22px;
-}
-
-.contact-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: #1689e8;
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 28px 6%;
-    background: #050d17;
-    color: #8999aa;
-    font-size: 13px;
-}
-
-footer strong {
-    color: #39a9ff;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 16px 5%;
-        flex-direction: column;
-        gap: 13px;
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
     }
-
-    .logo {
-        font-size: 22px;
-    }
-
-    nav {
-        text-align: center;
-    }
-
-    nav a {
-        margin: 0 6px;
-        font-size: 12px;
-    }
-
-    .hero {
-        min-height: calc(100vh - 105px);
-        padding: 85px 5% 65px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero h2 {
-        font-size: 20px;
-    }
-
-    .hero p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    section {
-        padding: 60px 5%;
-    }
-
-    .cards,
-    .jobs {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-box {
-        padding: 28px 18px;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
-@media (max-width: 380px) {
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.28);
+    background:rgba(255,255,255,.08);
+    color:#9edcff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:24px;
+}
 
-    .logo {
-        font-size: 19px;
+.hero-badge:before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#39c3ff;
+    box-shadow:0 0 15px #39c3ff;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+    50%{
+        opacity:.45;
+        transform:scale(1.5);
+    }
+}
+
+.hero h1{
+    color:white;
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.02;
+    letter-spacing:-2px;
+    margin-bottom:23px;
+}
+
+.hero h1 span{
+    color:#42bdff;
+}
+
+.hero h2{
+    color:#e6f5ff;
+    font-size:clamp(20px,3vw,29px);
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#d1dfeb;
+    font-size:17px;
+    line-height:1.9;
+    max-width:670px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 24px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:800;
+    transition:.35s;
+}
+
+.btn-primary{
+    color:white;
+    background:linear-gradient(135deg,#0874c9,#26a7f0);
+    box-shadow:0 10px 25px rgba(8,116,201,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 32px rgba(8,116,201,.35);
+}
+
+.btn-light{
+    color:white;
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(255,255,255,.06);
+}
+
+.btn-light:hover{
+    background:white;
+    color:#102a43;
+}
+
+/* Floating visual */
+
+.hero-orb{
+    position:absolute;
+    right:9%;
+    bottom:14%;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:1px solid rgba(65,191,255,.35);
+    animation:orbMove 5s ease-in-out infinite;
+}
+
+@keyframes orbMove{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-22px);
+    }
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:95px 5%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.heading{
+    max-width:730px;
+    margin:0 auto 55px;
+    text-align:center;
+}
+
+.eyebrow{
+    color:var(--blue2);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+}
+
+.heading h2{
+    font-size:clamp(30px,5vw,46px);
+    color:#102a43;
+    line-height:1.15;
+    margin:10px 0 16px;
+}
+
+.heading p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+/* SCROLL REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#ffffff;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:480px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(10,35,58,.12),rgba(10,35,58,.18)),
+        url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1100&q=85");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 25px 55px rgba(16,42,67,.14);
+    transform:translateZ(0);
+}
+
+.about-image:after{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:15px;
+}
+
+.about-content h3{
+    color:#102a43;
+    font-size:33px;
+    margin-bottom:18px;
+}
+
+.about-content p{
+    color:#627d98;
+    margin-bottom:17px;
+}
+
+.about-line{
+    width:70px;
+    height:4px;
+    background:linear-gradient(90deg,#1689e8,#41c2ff);
+    border-radius:5px;
+    margin:20px 0;
+}
+
+/* =========================
+   FOUNDERS
+========================= */
+
+.founders{
+    background:
+        linear-gradient(135deg,#edf6fc,#ffffff);
+}
+
+.founder-layout{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:60px;
+    align-items:center;
+}
+
+.founder-intro{
+    position:sticky;
+    top:120px;
+}
+
+.founder-intro .eyebrow{
+    display:block;
+    margin-bottom:10px;
+}
+
+.founder-intro h2{
+    font-size:clamp(32px,5vw,48px);
+    color:#102a43;
+    line-height:1.1;
+}
+
+.founder-intro p{
+    color:#627d98;
+    margin-top:18px;
+    max-width:420px;
+}
+
+.founder-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.founder-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    transition:.4s;
+    box-shadow:0 8px 25px rgba(16,42,67,.05);
+}
+
+.founder-card:hover{
+    transform:translateX(10px);
+    box-shadow:0 18px 35px rgba(16,42,67,.12);
+}
+
+.founder-avatar{
+    width:70px;
+    height:70px;
+    flex-shrink:0;
+    border-radius:18px;
+    background:linear-gradient(145deg,#0b5da7,#42bdff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    font-weight:900;
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,.3),
+        0 10px 22px rgba(17,103,177,.2);
+}
+
+.founder-card small{
+    display:block;
+    color:#1689e8;
+    font-weight:800;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.founder-card h3{
+    color:#102a43;
+    font-size:23px;
+}
+
+.founder-card p{
+    color:#7b8794;
+    font-size:13px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#f7faff;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px 25px;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg,#1689e8,#41c2ff);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.4s;
+}
+
+.service-card:hover:before{
+    transform:scaleX(1);
+}
+
+.service-card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 20px 40px rgba(16,42,67,.11);
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+    border-radius:15px;
+    background:#eaf6ff;
+    color:#1689e8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.service-card h3{
+    color:#102a43;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.service-card p{
+    color:#627d98;
+    font-size:14px;
+}
+
+/* =========================
+   WHY
+========================= */
+
+.why{
+    background:
+        linear-gradient(
+            120deg,
+            rgba(4,25,43,.97),
+            rgba(8,54,85,.92)
+        ),
+        url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+}
+
+.why .heading h2{
+    color:white;
+}
+
+.why .heading p{
+    color:#bdd0df;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.why-card{
+    padding:28px 23px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:15px;
+    backdrop-filter:blur(8px);
+    transition:.35s;
+}
+
+.why-card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,.1);
+}
+
+.why-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:rgba(54,185,255,.15);
+    color:#48c4ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    font-weight:900;
+    font-size:20px;
+}
+
+.why-card h3{
+    margin-bottom:8px;
+}
+
+.why-card p{
+    color:#b7cbd9;
+    font-size:14px;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+    background:white;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.process-card{
+    text-align:center;
+    padding:20px 10px;
+}
+
+.process-number{
+    width:58px;
+    height:58px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:linear-gradient(145deg,#0874c9,#36b9ff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    font-weight:900;
+    box-shadow:0 10px 22px rgba(17,103,177,.22);
+}
+
+.process-card h3{
+    color:#102a43;
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.process-card p{
+    color:#71859a;
+    font-size:12px;
+}
+
+/* =========================
+   JOBS
+========================= */
+
+.jobs{
+    background:#f5f8fc;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.job-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px;
+    transition:.4s;
+    box-shadow:0 8px 24px rgba(16,42,67,.05);
+}
+
+.job-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 38px rgba(16,42,67,.12);
+}
+
+.job-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.job-header h3{
+    color:#102a43;
+    font-size:22px;
+}
+
+.job-tag{
+    background:#eaf6ff;
+    color:#1689e8;
+    padding:6px 11px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:900;
+}
+
+.job-details{
+    margin:22px 0;
+}
+
+.job-details p{
+    color:#627d98;
+    font-size:14px;
+    margin:7px 0;
+}
+
+.job-details strong{
+    color:#243b53;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:90px 5%;
+    text-align:center;
+    background:
+        linear-gradient(135deg,#0874c9,#0b3556);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.cta:before,
+.cta:after{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.cta:before{
+    left:-100px;
+    top:-150px;
+}
+
+.cta:after{
+    right:-100px;
+    bottom:-160px;
+}
+
+.cta h2{
+    position:relative;
+    z-index:2;
+    font-size:clamp(30px,5vw,45px);
+    margin-bottom:13px;
+}
+
+.cta p{
+    position:relative;
+    z-index:2;
+    color:#dceeff;
+    max-width:650px;
+    margin:auto;
+}
+
+.cta .btn{
+    position:relative;
+    z-index:2;
+    margin-top:26px;
+    background:white;
+    color:#0874c9;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    padding:35px;
+    border-radius:17px;
+    border:1px solid var(--border);
+    background:#ffffff;
+    box-shadow:0 10px 30px rgba(16,42,67,.05);
+}
+
+.contact-card h3{
+    color:#102a43;
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:18px 0;
+}
+
+.contact-icon{
+    width:45px;
+    height:45px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:#eaf6ff;
+    color:#1689e8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.contact-item strong{
+    display:block;
+    color:#102a43;
+    font-size:14px;
+}
+
+.contact-item span,
+.contact-item a{
+    color:#627d98;
+    font-size:14px;
+}
+
+.contact-item a:hover{
+    color:#1689e8;
+}
+
+.contact-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social-section{
+    background:#f5f8fc;
+    text-align:center;
+    padding:65px 5%;
+}
+
+.social-section h2{
+    color:#102a43;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.social-section p{
+    color:#71859a;
+    margin-bottom:25px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+}
+
+.social-icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:900;
+    color:white;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(16,42,67,.12);
+}
+
+.social-icon:hover{
+    transform:translateY(-7px) rotate(-2deg);
+}
+
+.instagram{
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.whatsapp{
+    background:#18b957;
+}
+
+.email{
+    background:#1689e8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#061624;
+    color:#9fb3c8;
+    padding:45px 5% 30px;
+    text-align:center;
+}
+
+.footer-logo{
+    color:white;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.footer-logo span{
+    color:#39b9ff;
+}
+
+.footer-brand{
+    margin-top:7px;
+    color:#c7d8e6;
+    font-size:13px;
+}
+
+.footer-links{
+    margin:22px 0;
+}
+
+.footer-links a{
+    color:#a9bdce;
+    font-size:12px;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:#39b9ff;
+}
+
+footer small{
+    color:#6f8497;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .header-inner{
+        min-height:72px;
     }
 
-    nav a {
-        margin: 0 3px;
-        font-size: 11px;
+    nav{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        padding:22px 6%;
+        background:white;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:19px;
+        box-shadow:0 15px 30px rgba(0,0,0,.1);
     }
 
-    .hero h1 {
-        font-size: 30px;
+    nav.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+        order:1;
+    }
+
+    .brand{
+        order:2;
+    }
+
+    .brand-name{
+        font-size:16px;
+    }
+
+    .hero{
+        background-attachment:scroll;
+    }
+
+    .about-grid,
+    .founder-layout,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .founder-intro{
+        position:static;
+    }
+
+    .service-grid,
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .job-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        padding:0 5%;
+    }
+
+    .brand-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .brand-name{
+        font-size:14px;
+        letter-spacing:.8px;
+    }
+
+    .brand-sub{
+        font-size:7px;
+    }
+
+    .hero{
+        min-height:760px;
+    }
+
+    .hero-inner{
+        padding:130px 6% 80px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .about-image{
+        min-height:320px;
+    }
+
+    .service-grid,
+    .why-grid,
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .founder-card{
+        padding:20px;
+    }
+
+    .job-header{
+        flex-direction:column;
+    }
+
+    .contact-card{
+        padding:26px 20px;
+    }
+
+    .social-icons{
+        gap:10px;
+    }
+
+    .social-icon{
+        width:52px;
+        height:52px;
     }
 }
 
@@ -375,325 +1215,24 @@ footer strong {
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
-        NEXORA <span>CONSULTANCY</span>
-    </div>
+<div class="header-inner">
 
-    <nav>
+    <!-- NAVIGATION -->
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#founders">Founders</a>
         <a href="#jobs">Jobs</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <h1>
-            Welcome to <span>Nexora Consultancy</span>
-        </h1>
-
-        <h2>
-            Nexora Talent Solutions 2.0
-        </h2>
-
-        <p>
-            Training, Placement Services &amp; Career Solutions.
-            Connecting talented candidates with suitable career opportunities
-            across IT and Non-IT sectors.
-        </p>
-
-        <a href="#jobs" class="btn">
-            Explore Opportunities
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-    <div class="section-title">
-
-        <h2>About Nexora Consultancy</h2>
-
-        <p>
-            Building Careers. Connecting Talent. Creating Opportunities.
-        </p>
-
-    </div>
-
-    <div class="about">
-
-        <p>
-            Nexora Consultancy is a professional career and placement service
-            focused on connecting candidates with suitable employment
-            opportunities across IT and Non-IT sectors.
-        </p>
-
-        <br>
-
-        <p>
-            We provide career guidance, training support, recruitment assistance
-            and placement-related services to help candidates move toward
-            suitable professional opportunities.
-        </p>
-
-        <div class="founder">
-
-            <div class="founder-title">
-                Founder
-            </div>
-
-            <div class="founder-name">
-                Sankula Ashok
-                Rampati Ramkalyan
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section id="services">
-
-    <div class="section-title">
-
-        <h2>Our Services</h2>
-
-        <p>
-            Professional career and recruitment solutions.
-        </p>
-
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>Training</h3>
-
-            <p>
-                Career-focused training and skill development opportunities
-                to help candidates improve their professional capabilities.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Placement Services</h3>
-
-            <p>
-                Connecting qualified candidates with suitable employment
-                opportunities across different sectors.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Career Solutions</h3>
-
-            <p>
-                Career guidance and recruitment support designed to help
-                candidates make informed professional decisions.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- JOBS -->
-
-<section id="jobs">
-
-    <div class="section-title">
-
-        <h2>Current Job Opportunities</h2>
-
-        <p>
-            Explore available career opportunities through Nexora Consultancy.
-        </p>
-
-    </div>
-
-
-    <div class="jobs">
-
-        <div class="job">
-
-            <h3>IT Job Opportunities</h3>
-
-            <p>
-                <strong>Sector:</strong>
-                Information Technology
-            </p>
-
-            <p>
-                <strong>Openings:</strong>
-                Multiple Positions
-            </p>
-
-            <p>
-                <strong>Experience:</strong>
-                Freshers &amp; Experienced
-            </p>
-
-            <p>
-                <strong>Location:</strong>
-                Multiple Locations
-            </p>
-
-            <a href="#contact" class="btn">
-                Apply Now
-            </a>
-
-        </div>
-
-
-        <div class="job">
-
-            <h3>Non-IT Job Opportunities</h3>
-
-            <p>
-                <strong>Sector:</strong>
-                Non-IT
-            </p>
-
-            <p>
-                <strong>Openings:</strong>
-                Multiple Positions
-            </p>
-
-            <p>
-                <strong>Experience:</strong>
-                Freshers &amp; Experienced
-            </p>
-
-            <p>
-                <strong>Location:</strong>
-                Multiple Locations
-            </p>
-
-            <a href="#contact" class="btn">
-                Apply Now
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <div class="section-title">
-
-        <h2>Contact Us</h2>
-
-        <p>
-            For job opportunities and career enquiries, contact Nexora Consultancy.
-        </p>
-
-    </div>
-
-    <div class="contact-box">
-
-        <p>
-            <strong>Company:</strong>
-            Nexora Consultancy
-        </p>
-
-        <p>
-            <strong>Brand:</strong>
-            Nexora Talent Solutions 2.0
-        </p>
-
-        <p>
-            <strong>Founder:</strong>
-            Sankula Ashok
-        </p>
-
-        <p>
-            <strong>Phone:</strong>
-            <a href="tel:+918464839771">
-                +91 84648 39771
-            </a>
-        </p>
-
-        <p>
-            <strong>Email:</strong>
-            <a href="mailto:nexoratalent2.o@gmail.com">
-                nexoratalent2.o@gmail.com
-            </a>
-        </p>
-
-        <div class="contact-buttons">
-
-            <a class="contact-btn" href="tel:+918464839771">
-                Call Us
-            </a>
-
-            <a class="contact-btn" href="mailto:nexoratalent2.o@gmail.com">
-                Email Us
-            </a>
-
-            <a
-                class="contact-btn"
-                href="https://wa.me/918464839771"
-                target="_blank"
-                rel="noopener">
-                WhatsApp
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        © 2026 <strong>Nexora Consultancy</strong>.
-        All Rights Reserved.
-    </p>
-
-    <p>
-        Nexora Talent Solutions 2.0 | Founder: Sankula Ashok
-    </p>
-
-</footer>
-
-</body>
-</html>
+        <a href="#contact">Con
