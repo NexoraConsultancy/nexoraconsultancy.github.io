@@ -26,9 +26,11 @@ body {
     line-height: 1.6;
 }
 
+/* HEADER */
+
 header {
     background: #081827;
-    padding: 16px 7%;
+    padding: 18px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,9 +41,10 @@ header {
 }
 
 .logo {
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 800;
     color: #39a9ff;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -59,26 +62,29 @@ nav a:hover {
     color: #39a9ff;
 }
 
+/* HERO */
+
 .hero {
-    min-height: 88vh;
+    min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 7%;
+    padding: 90px 6% 70px;
     background:
-        radial-gradient(circle at top right, #12395c, transparent 40%),
+        radial-gradient(circle at top right, #12395c, transparent 42%),
         linear-gradient(135deg, #07111f, #0b1d31);
 }
 
 .hero-content {
     max-width: 850px;
+    width: 100%;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: clamp(34px, 7vw, 54px);
     line-height: 1.2;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero h1 span {
@@ -86,35 +92,40 @@ nav a:hover {
 }
 
 .hero h2 {
-    font-size: 22px;
+    font-size: clamp(20px, 4vw, 27px);
     color: #d7eaff;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero p {
     max-width: 720px;
     margin: auto;
     color: #b9c8d8;
-    font-size: 17px;
+    font-size: clamp(15px, 3vw, 18px);
+    line-height: 1.8;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 28px;
-    padding: 13px 26px;
+    margin-top: 30px;
+    padding: 14px 27px;
     border-radius: 8px;
     background: #1689e8;
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #39a9ff;
+    transform: translateY(-2px);
 }
 
+/* SECTIONS */
+
 section {
-    padding: 75px 7%;
+    padding: 75px 6%;
 }
 
 .section-title {
@@ -123,7 +134,7 @@ section {
 }
 
 .section-title h2 {
-    font-size: 32px;
+    font-size: clamp(28px, 5vw, 36px);
     color: #39a9ff;
     margin-bottom: 8px;
 }
@@ -131,6 +142,8 @@ section {
 .section-title p {
     color: #aebdcc;
 }
+
+/* ABOUT */
 
 .about {
     max-width: 900px;
@@ -141,15 +154,28 @@ section {
 }
 
 .founder {
-    margin-top: 28px;
-    text-align: center;
+    margin-top: 30px;
+    padding: 22px;
+    background: #0d2033;
+    border: 1px solid #1b3a56;
+    border-radius: 12px;
+}
+
+.founder-title {
+    color: #39a9ff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.founder-name {
+    margin-top: 5px;
+    font-size: 21px;
+    font-weight: bold;
     color: #ffffff;
 }
 
-.founder strong {
-    color: #39a9ff;
-    font-size: 19px;
-}
+/* SERVICES */
 
 .cards {
     display: grid;
@@ -168,12 +194,15 @@ section {
 .card h3 {
     color: #39a9ff;
     margin-bottom: 12px;
+    font-size: 20px;
 }
 
 .card p {
     color: #b8c6d4;
     font-size: 14px;
 }
+
+/* JOBS */
 
 .jobs {
     display: grid;
@@ -191,6 +220,7 @@ section {
 .job h3 {
     color: #ffffff;
     margin-bottom: 14px;
+    font-size: 21px;
 }
 
 .job p {
@@ -202,12 +232,14 @@ section {
     color: #39a9ff;
 }
 
+/* CONTACT */
+
 .contact {
     background: #0a1929;
 }
 
 .contact-box {
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
     background: #0d2033;
     padding: 35px;
@@ -235,7 +267,7 @@ section {
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 22px;
 }
 
 .contact-btn {
@@ -248,13 +280,11 @@ section {
     font-weight: bold;
 }
 
-.contact-btn:hover {
-    background: #39a9ff;
-}
+/* FOOTER */
 
 footer {
     text-align: center;
-    padding: 28px 7%;
+    padding: 28px 6%;
     background: #050d17;
     color: #8999aa;
     font-size: 13px;
@@ -264,11 +294,18 @@ footer strong {
     color: #39a9ff;
 }
 
+/* MOBILE */
+
 @media (max-width: 768px) {
 
     header {
+        padding: 16px 5%;
         flex-direction: column;
-        gap: 12px;
+        gap: 13px;
+    }
+
+    .logo {
+        font-size: 22px;
     }
 
     nav {
@@ -281,19 +318,25 @@ footer strong {
     }
 
     .hero {
-        min-height: 80vh;
+        min-height: calc(100vh - 105px);
+        padding: 85px 5% 65px;
     }
 
     .hero h1 {
-        font-size: 35px;
+        font-size: 34px;
     }
 
     .hero h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .hero p {
         font-size: 15px;
+        line-height: 1.8;
+    }
+
+    section {
+        padding: 60px 5%;
     }
 
     .cards,
@@ -301,12 +344,24 @@ footer strong {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 55px 5%;
+    .contact-box {
+        padding: 28px 18px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 19px;
     }
 
-    .section-title h2 {
-        font-size: 28px;
+    nav a {
+        margin: 0 3px;
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
     }
 }
 </style>
@@ -348,7 +403,7 @@ footer strong {
         </h2>
 
         <p>
-            Training, Placement Services & Career Solutions.
+            Training, Placement Services &amp; Career Solutions.
             Connecting talented candidates with suitable career opportunities
             across IT and Non-IT sectors.
         </p>
@@ -367,16 +422,21 @@ footer strong {
 <section id="about">
 
     <div class="section-title">
+
         <h2>About Nexora Consultancy</h2>
-        <p>Building Careers. Connecting Talent. Creating Opportunities.</p>
+
+        <p>
+            Building Careers. Connecting Talent. Creating Opportunities.
+        </p>
+
     </div>
 
     <div class="about">
 
         <p>
-            Nexora Consultancy is a career and placement service focused on
-            connecting candidates with suitable employment opportunities
-            across IT and Non-IT sectors.
+            Nexora Consultancy is a professional career and placement service
+            focused on connecting candidates with suitable employment
+            opportunities across IT and Non-IT sectors.
         </p>
 
         <br>
@@ -388,13 +448,15 @@ footer strong {
         </p>
 
         <div class="founder">
-            <p>
-                <strong>Founder</strong>
-            </p>
 
-            <p>
+            <div class="founder-title">
+                Founder
+            </div>
+
+            <div class="founder-name">
                 Sankula Ashok
-            </p>
+            </div>
+
         </div>
 
     </div>
@@ -407,8 +469,13 @@ footer strong {
 <section id="services">
 
     <div class="section-title">
+
         <h2>Our Services</h2>
-        <p>Professional career and recruitment solutions.</p>
+
+        <p>
+            Professional career and recruitment solutions.
+        </p>
+
     </div>
 
     <div class="cards">
@@ -470,7 +537,6 @@ footer strong {
 
     <div class="jobs">
 
-
         <div class="job">
 
             <h3>IT Job Opportunities</h3>
@@ -487,7 +553,7 @@ footer strong {
 
             <p>
                 <strong>Experience:</strong>
-                Freshers & Experienced
+                Freshers &amp; Experienced
             </p>
 
             <p>
@@ -518,7 +584,7 @@ footer strong {
 
             <p>
                 <strong>Experience:</strong>
-                Freshers & Experienced
+                Freshers &amp; Experienced
             </p>
 
             <p>
@@ -551,7 +617,6 @@ footer strong {
 
     </div>
 
-
     <div class="contact-box">
 
         <p>
@@ -561,12 +626,14 @@ footer strong {
 
         <p>
             <strong>Brand:</strong>
-            Nexora Consultancy 2026
+            Nexora Talent Solutions 2.0
         </p>
 
         <p>
-            <strong>Founder:</strong>
-            Sankula Ashok
+            <strong>Founder's:</strong>
+            S.Ashok
+            R.Ram
+            
         </p>
 
         <p>
@@ -582,7 +649,6 @@ footer strong {
                 nexoratalent2.o@gmail.com
             </a>
         </p>
-
 
         <div class="contact-buttons">
 
@@ -601,7 +667,8 @@ footer strong {
             <a
                 class="contact-btn"
                 href="https://wa.me/918464839771"
-                target="_blank">
+                target="_blank"
+                rel="noopener">
                 WhatsApp
             </a>
 
@@ -622,10 +689,10 @@ footer strong {
     </p>
 
     <p>
-        Nexora Consultancy 2026 | Founder: Sankula Ashok
+        Nexora Talent Solutions 2.0 | Founder: Sankula Ashok
     </p>
 
 </footer>
 
 </body>
-</html>
+                </html>
