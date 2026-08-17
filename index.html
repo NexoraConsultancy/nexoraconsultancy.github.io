@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nexora Consultancy | Nexora Talent Solutions 2.0</title>
+
+<meta name="description" content="Nexora Consultancy - Training, Placement Services and Career Solutions. Founded by Sankula Ashok.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    background: #081827;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #19334d;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: #39a9ff;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #39a9ff;
+}
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 7%;
+    background:
+        radial-gradient(circle at top right, #12395c, transparent 40%),
+        linear-gradient(135deg, #07111f, #0b1d31);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #39a9ff;
+}
+
+.hero h2 {
+    font-size: 22px;
+    color: #d7eaff;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+    color: #b9c8d8;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 26px;
+    border-radius: 8px;
+    background: #1689e8;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #39a9ff;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #39a9ff;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #aebdcc;
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    color: #c4d0dc;
+    font-size: 16px;
+}
+
+.founder {
+    margin-top: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.founder strong {
+    color: #39a9ff;
+    font-size: 19px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: #0d2033;
+    padding: 30px 22px;
+    border-radius: 12px;
+    border: 1px solid #1b3a56;
+    text-align: center;
+}
+
+.card h3 {
+    color: #39a9ff;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #b8c6d4;
+    font-size: 14px;
+}
+
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.job {
+    background: #0d2033;
+    padding: 28px;
+    border-radius: 12px;
+    border-left: 4px solid #39a9ff;
+}
+
+.job h3 {
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.job p {
+    color: #b8c6d4;
+    margin: 6px 0;
+}
+
+.job strong {
+    color: #39a9ff;
+}
+
+.contact {
+    background: #0a1929;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    background: #0d2033;
+    padding: 35px;
+    border-radius: 14px;
+    border: 1px solid #1b3a56;
+    text-align: center;
+}
+
+.contact-box p {
+    margin: 13px 0;
+    color: #d0dbe6;
+}
+
+.contact-box strong {
+    color: #ffffff;
+}
+
+.contact-box a {
+    color: #39a9ff;
+    text-decoration: none;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #1689e8;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background: #39a9ff;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 7%;
+    background: #050d17;
+    color: #8999aa;
+    font-size: 13px;
+}
+
+footer strong {
+    color: #39a9ff;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .cards,
+    .jobs {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        NEXORA <span>CONSULTANCY</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to <span>Nexora Consultancy</span>
+        </h1>
+
+        <h2>
+            Nexora Talent Solutions 2.0
+        </h2>
+
+        <p>
+            Training, Placement Services & Career Solutions.
+            Connecting talented candidates with suitable career opportunities
+            across IT and Non-IT sectors.
+        </p>
+
+        <a href="#jobs" class="btn">
+            Explore Opportunities
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Nexora Consultancy</h2>
+        <p>Building Careers. Connecting Talent. Creating Opportunities.</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            Nexora Consultancy is a career and placement service focused on
+            connecting candidates with suitable employment opportunities
+            across IT and Non-IT sectors.
+        </p>
+
+        <br>
+
+        <p>
+            We provide career guidance, training support, recruitment assistance
+            and placement-related services to help candidates move toward
+            suitable professional opportunities.
+        </p>
+
+        <div class="founder">
+            <p>
+                <strong>Founder</strong>
+            </p>
+
+            <p>
+                Sankula Ashok
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Professional career and recruitment solutions.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Training</h3>
+
+            <p>
+                Career-focused training and skill development opportunities
+                to help candidates improve their professional capabilities.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Placement Services</h3>
+
+            <p>
+                Connecting qualified candidates with suitable employment
+                opportunities across different sectors.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Career Solutions</h3>
+
+            <p>
+                Career guidance and recruitment support designed to help
+                candidates make informed professional decisions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOBS -->
+
+<section id="jobs">
+
+    <div class="section-title">
+
+        <h2>Current Job Opportunities</h2>
+
+        <p>
+            Explore available career opportunities through Nexora Consultancy.
+        </p>
+
+    </div>
+
+
+    <div class="jobs">
+
+
+        <div class="job">
+
+            <h3>IT Job Opportunities</h3>
+
+            <p>
+                <strong>Sector:</strong>
+                Information Technology
+            </p>
+
+            <p>
+                <strong>Openings:</strong>
+                Multiple Positions
+            </p>
+
+            <p>
+                <strong>Experience:</strong>
+                Freshers & Experienced
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Multiple Locations
+            </p>
+
+            <a href="#contact" class="btn">
+                Apply Now
+            </a>
+
+        </div>
+
+
+        <div class="job">
+
+            <h3>Non-IT Job Opportunities</h3>
+
+            <p>
+                <strong>Sector:</strong>
+                Non-IT
+            </p>
+
+            <p>
+                <strong>Openings:</strong>
+                Multiple Positions
+            </p>
+
+            <p>
+                <strong>Experience:</strong>
+                Freshers & Experienced
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Multiple Locations
+            </p>
+
+            <a href="#contact" class="btn">
+                Apply Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            For job opportunities and career enquiries, contact Nexora Consultancy.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <p>
+            <strong>Company:</strong>
+            Nexora Consultancy
+        </p>
+
+        <p>
+            <strong>Brand:</strong>
+            Nexora Consultancy 2026
+        </p>
+
+        <p>
+            <strong>Founder:</strong>
+            Sankula Ashok
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            <a href="tel:+918464839771">
+                +91 84648 39771
+            </a>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:nexoratalent2.o@gmail.com">
+                nexoratalent2.o@gmail.com
+            </a>
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a
+                class="contact-btn"
+                href="tel:+918464839771">
+                Call Us
+            </a>
+
+            <a
+                class="contact-btn"
+                href="mailto:nexoratalent2.o@gmail.com">
+                Email Us
+            </a>
+
+            <a
+                class="contact-btn"
+                href="https://wa.me/918464839771"
+                target="_blank">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Nexora Consultancy</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Nexora Consultancy 2026 | Founder: Sankula Ashok
+    </p>
+
+</footer>
+
+</body>
+</html>
