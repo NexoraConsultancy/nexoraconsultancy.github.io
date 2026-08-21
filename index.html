@@ -9,23 +9,23 @@
 
 <style>
 :root{
-  --ink:#081827;
-  --navy:#0b2034;
-  --navy2:#102d46;
-  --blue:#16a9e8;
-  --cyan:#57dcff;
-  --gold:#d9a441;
-  --paper:#f5f8fb;
+  --ink:#10212b;
+  --navy:#071b2a;
+  --navy2:#0d3040;
+  --blue:#087ea4;
+  --cyan:#36c2c8;
+  --gold:#e2b44f;
+  --paper:#f3f7f8;
   --white:#fff;
-  --muted:#6b7d8d;
-  --line:rgba(8,24,39,.10);
-  --shadow:0 22px 70px rgba(8,24,39,.12);
+  --muted:#647781;
+  --line:rgba(16,33,43,.11);
+  --shadow:0 22px 70px rgba(7,27,42,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  color:var(--ink);background:var(--paper);overflow-x:hidden;
+  color:var(--ink);background:linear-gradient(180deg,#f6f9fa 0%,#eef4f5 52%,#f8fafb 100%);overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
@@ -49,16 +49,21 @@ header.scrolled{background:rgba(7,22,36,.94);box-shadow:0 12px 40px rgba(0,0,0,.
 .brand{display:flex;align-items:center;gap:12px;order:2}
 .logo{
   width:48px;height:48px;border-radius:15px;position:relative;display:grid;place-items:center;
-  background:linear-gradient(145deg,#0e547a,#19b9ef 65%,#76e8ff);
-  box-shadow:inset 0 2px 3px rgba(255,255,255,.4),0 10px 35px rgba(22,169,232,.28);
-  transform-style:preserve-3d;animation:logoFloat 4s ease-in-out infinite;
+  background:linear-gradient(145deg,#082738,#0b5f72 62%,#168f9a);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.18),0 10px 35px rgba(8,126,164,.24);
+  transform-style:preserve-3d;animation:logoFloat 4s ease-in-out infinite;overflow:hidden;
 }
-.logo:before,.logo:after{
-  content:"";position:absolute;border:2px solid rgba(255,255,255,.86);border-radius:10px;
+.logo:before{
+  content:"";position:absolute;width:27px;height:27px;border-radius:50%;
+  border:2px solid rgba(226,180,79,.92);box-shadow:0 0 18px rgba(226,180,79,.28);
 }
-.logo:before{width:20px;height:20px;transform:rotate(45deg)}
-.logo:after{width:11px;height:11px;border-radius:50%;background:var(--gold);border:0;box-shadow:0 0 20px rgba(217,164,65,.8)}
-.logo span{font-size:0}
+.logo:after{
+  content:"";position:absolute;inset:5px;border-radius:11px;
+  border:1px solid rgba(255,255,255,.12);
+}
+.logo span{position:relative;z-index:2;font-size:21px;font-weight:950;line-height:1;color:#fff;letter-spacing:-.5px;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+
 @keyframes logoFloat{
   0%,100%{transform:translateY(0) rotateX(0) rotateY(0)}
   50%{transform:translateY(-4px) rotateX(4deg) rotateY(-6deg)}
@@ -147,7 +152,7 @@ section{padding:105px 5%}
 @keyframes cardFloat{50%{transform:translateY(-8px)}}
 .about-copy h3{font-size:34px;line-height:1.15;margin-bottom:17px}
 .about-copy p{color:#62778a;line-height:1.85;margin-bottom:16px}
-.line{width:72px;height:4px;border-radius:10px;background:linear-gradient(90deg,var(--blue),var(--gold));margin:24px 0}
+.line{width:72px;height:4px;border-radius:10px;background:linear-gradient(90deg,var(--cyan),var(--gold));margin:24px 0}
 
 /* FOUNDERS */
 .founders{background:linear-gradient(135deg,#edf7fb,#fff)}
@@ -205,7 +210,21 @@ section{padding:105px 5%}
 .job p{color:#6b8090;font-size:13px;line-height:1.7;margin-top:14px}
 .apply{display:inline-flex;margin-top:18px;color:#0787c9;font-size:12px;font-weight:900}
 
-/* APPLICATION */
+/* JOB FILTERS & CANDIDATE PORTAL */
+.job-filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;gap:10px;margin:0 auto 20px}
+.job-filters input,.job-filters select{width:100%;border:1px solid #cbd9e3;border-radius:11px;padding:13px 12px;background:#fff;color:#173149;outline:none}
+.job-filters input:focus,.job-filters select:focus{border-color:#16a9e8;box-shadow:0 0 0 4px rgba(22,169,232,.08)}
+.job-portal-status{display:flex;justify-content:space-between;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:20px}
+.job-portal-status strong{font-size:13px}.job-portal-status span{font-size:11px;color:#718697}
+.job-empty{grid-column:1/-1;text-align:center}
+.candidate-notice{display:grid;gap:6px;background:#eef8fc;border:1px solid #cfeaf5;border-radius:14px;padding:16px;margin-bottom:18px}
+.candidate-notice strong{font-size:12px;color:#14344b}.candidate-notice span{font-size:11px;color:#60788a;line-height:1.6}
+.candidate-easy-panel{border:1px solid #cfe3eb;border-radius:18px;padding:20px;background:linear-gradient(135deg,#f8fcfd,#eef8fb);margin-bottom:16px}.candidate-easy-head{display:flex;gap:14px;align-items:center}.candidate-easy-head h3{font-size:18px;margin-bottom:4px}.candidate-easy-head p{font-size:11px;color:#6d8291;line-height:1.6}.easy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.easy-grid>div{background:#fff;border:1px solid #dce9ef;border-radius:12px;padding:13px}.easy-grid strong{display:block;font-size:11px;color:#15364b;margin-bottom:5px}.easy-grid span{display:block;font-size:10px;color:#708594;line-height:1.5}.easy-note{margin-top:12px;padding:11px 13px;border-radius:11px;background:#fff7e4;border:1px solid #f0d89a;color:#6e5a2b;font-size:10px;line-height:1.5}.easy-note b{color:#4f3b12}
+.airtable-connect{display:flex;gap:15px;align-items:center;border:1px solid #d8e3ea;border-radius:16px;padding:18px;background:#fff}
+.airtable-icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#0a557b,#19b9ef);color:#fff;font-weight:950}
+.airtable-connect h3{font-size:17px;margin-bottom:5px}.airtable-connect p{font-size:11px;color:#708596;line-height:1.6}
+.form-link{margin-top:18px}.form-connect-note{font-size:10px;color:#7a8c9a;line-height:1.5;margin-top:10px}
+\n/* APPLICATION */
 .apply-section{
   background:
     linear-gradient(135deg,rgba(5,24,40,.96),rgba(8,62,88,.94)),
@@ -275,7 +294,7 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
   .nav{min-height:72px}.logo{width:42px;height:42px}.brand-text strong{font-size:14px}.brand-text small{font-size:7px}
   nav{top:72px}.hero-inner{padding:125px 6% 70px}.hero h1{font-size:44px;letter-spacing:-2px}
   .hero p{font-size:14px}.hero-stats{gap:20px;margin-top:38px}
-  section{padding:75px 5%}.visual{min-height:340px}.cards,.process-grid{grid-template-columns:1fr}
+  section{padding:75px 5%}.visual{min-height:340px}.cards,.process-grid{grid-template-columns:1fr}.easy-grid{grid-template-columns:1fr}
   .founder{padding:20px}.form-wrap{padding:22px 17px;border-radius:20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
   .submit-row{align-items:stretch;flex-direction:column}.submit-row .btn{width:100%}
 }
@@ -292,7 +311,6 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#founders">Leadership</a>
       <a href="#jobs">Opportunities</a>
       <a href="#apply">Apply</a>
       <a href="#contact">Contact</a>
@@ -354,37 +372,7 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
   </div>
 </section>
 
-<section class="founders" id="founders">
-  <div class="container">
-    <div class="founder-layout">
-      <div class="founder-title reveal">
-        <div class="eyebrow">Leadership</div>
-        <h2>Built With<br>Purpose.</h2>
-        <p>Our leadership team focuses on building a credible, professional and candidate-first consulting experience.</p>
-      </div>
 
-      <div class="founder-list">
-        <div class="founder reveal">
-          <div class="avatar">SA</div>
-          <div>
-            <small>Founder</small>
-            <h3>S. Ashok</h3>
-            <p>Founder • Nexora Consultancy</p>
-          </div>
-        </div>
-
-        <div class="founder reveal">
-          <div class="avatar">RK</div>
-          <div>
-            <small>Co-Founder</small>
-            <h3>R. Ramkalyan</h3>
-            <p>Co-Founder • Nexora Consultancy</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="services" id="services">
   <div class="container">
@@ -441,14 +429,54 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
 <section class="jobs" id="jobs">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Opportunities</div>
-      <h2>Find The Right Next Step.</h2>
-      <p>Current openings can be added here as they become available.</p>
+      <div class="eyebrow">Live Opportunities</div>
+      <h2>Find Your Next Opportunity.</h2>
+      <p>Browse opportunities by sector, company type, location and experience. Job availability is managed from the Nexora recruitment database.</p>
     </div>
 
-    <div class="jobs-grid">
-      <article class="job reveal"><div class="job-top"><h3>IT Opportunities</h3><span class="tag">OPEN ROLES</span></div><p>Software, support, testing, data and other technology-oriented requirements.</p><a class="apply" href="#apply">Submit Profile →</a></article>
-      <article class="job reveal"><div class="job-top"><h3>Non-IT Opportunities</h3><span class="tag">OPEN ROLES</span></div><p>Selected operations, sales, administration and other professional requirements.</p><a class="apply" href="#apply">Submit Profile →</a></article>
+    <div class="job-filters reveal">
+      <input id="jobSearch" type="search" placeholder="Search job title, company or skill">
+      <select id="sectorFilter">
+        <option value="">All Sectors</option>
+        <option value="IT">IT</option>
+        <option value="Non-IT">Non-IT</option>
+      </select>
+      <select id="companyTypeFilter">
+        <option value="">All Company Types</option>
+        <option value="MNC">MNC</option>
+        <option value="Indian Company">Indian Company</option>
+        <option value="Startup">Startup</option>
+      </select>
+      <select id="experienceFilter">
+        <option value="">All Experience Levels</option>
+        <option value="Fresher">Fresher</option>
+        <option value="0-2 Years">0-2 Years</option>
+        <option value="2-5 Years">2-5 Years</option>
+        <option value="5+ Years">5+ Years</option>
+      </select>
+      <input id="locationFilter" type="search" placeholder="Location">
+    </div>
+
+    <div id="jobPortalStatus" class="job-portal-status reveal">
+      <strong>Nexora Recruitment Database</strong>
+      <span>Live job records will appear here when the Airtable Jobs view is connected.</span>
+    </div>
+
+    <div class="jobs-grid" id="jobsGrid">
+      <article class="job reveal" data-sector="IT" data-company="MNC" data-experience="Fresher 0-2 Years" data-location="Hyderabad Bengaluru Chennai Pune">
+        <div class="job-top"><h3>IT Opportunities</h3><span class="tag">LIVE DATABASE</span></div>
+        <p>Software, testing, support, data, cloud, development and other technology-oriented requirements.</p>
+        <a class="apply" href="#apply">Check & Apply →</a>
+      </article>
+      <article class="job reveal" data-sector="Non-IT" data-company="MNC Indian Company" data-experience="Fresher 0-2 Years 2-5 Years 5+ Years" data-location="Hyderabad Bengaluru Chennai Pune Delhi Mumbai">
+        <div class="job-top"><h3>Non-IT Opportunities</h3><span class="tag">LIVE DATABASE</span></div>
+        <p>Operations, sales, HR, finance, customer support, administration and other professional requirements.</p>
+        <a class="apply" href="#apply">Check & Apply →</a>
+      </article>
+      <article class="job job-empty" id="jobEmpty" style="display:none">
+        <div class="job-top"><h3>No matching opportunity</h3><span class="tag">SEARCH</span></div>
+        <p>Try changing the sector, company type, experience level or location.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -457,44 +485,43 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
   <div class="container">
     <div class="form-wrap reveal">
       <div class="form-head">
-        <div class="eyebrow">Application & Requirement Desk</div>
+        <div class="eyebrow">Nexora Candidate Application</div>
         <h2>Tell Us What You Need.</h2>
-        <p>Submit your details first. Our team will review them and contact you if the requirement is suitable.</p>
+        <p>Submit your complete profile and job preferences. Our recruitment team will review the requirement and contact you regarding the next step.</p>
       </div>
 
-      <div class="tally-embed-wrap">
-        <iframe
-          data-tally-src="https://tally.so/embed/RGqYeK?alignLeft=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="200"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Nexora Consultancy Job Application Form">
-        </iframe>
+      <div class="candidate-notice">
+        <strong>Candidate information collected</strong>
+        <span>Name • Mobile • Email • Resume • Job Role • IT/Non-IT • MNC/Indian Company • Experience Level • Current Location • Preferred Job Location • Skills • Domain • Previous Salary • Expected Salary • Other requirements</span>
       </div>
 
-      <script>
-        var d=document,w="https://tally.so/widgets/embed.js",
-        v=function(){
-          if(typeof Tally!=="undefined"){
-            Tally.loadEmbeds();
-          }else{
-            d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
-              e.src=e.dataset.tallySrc;
-            });
-          }
-        };
-        if(typeof Tally!=="undefined") v();
-        else if(d.querySelector('script[src="'+w+'"]')==null){
-          var s=d.createElement("script");
-          s.src=w;
-          s.onload=v;
-          s.onerror=v;
-          d.body.appendChild(s);
-        }
-      </script>
+      <div class="candidate-easy-panel">
+        <div class="candidate-easy-head">
+          <div class="airtable-icon">N</div>
+          <div>
+            <h3>Easy Candidate Application</h3>
+            <p>We are structuring the application so candidates can enter their requirement quickly and accurately.</p>
+          </div>
+        </div>
+        <div class="easy-grid">
+          <div><strong>Experience</strong><span>Fresher • 0–2 Years • 2–5 Years • 5+ Years</span></div>
+          <div><strong>Location</strong><span>Search by city name or abbreviation, e.g. HYD → Hyderabad, VIZ → Visakhapatnam.</span></div>
+          <div><strong>Company</strong><span>Search company names by the first letters instead of scrolling through a long list.</span></div>
+          <div><strong>Salary</strong><span>Enter the amount and use standard Indian-number formatting such as ₹1,10,000.</span></div>
+        </div>
+        <div class="easy-note"><b>Important:</b> These smart search and formatting behaviours must be configured in the candidate form itself. The public Airtable form cannot be modified from this website code.</div>
+      </div>
+
+      <div class="airtable-connect">
+        <div class="airtable-icon">↗</div>
+        <div>
+          <h3>Nexora Candidate Application</h3>
+          <p>Your private Airtable database stays private. Candidates only receive the public application form.</p>
+        </div>
+      </div>
+
+      <a class="btn primary form-link" id="airtableFormLink" href="#" target="_blank" rel="noopener">Open Candidate Application →</a>
+      <p class="form-connect-note">Admin note: replace the form link in the website code with the public Airtable Candidate Application URL. Keep the Airtable base private; only the candidate form should be public.</p>
     </div>
   </div>
 </section>
@@ -516,9 +543,10 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
       </div>
 
       <div class="contact-box reveal">
-        <h3>Leadership</h3>
-        <div class="contact-item"><div class="contact-icon">SA</div><div><strong>Founder</strong><span>S. Ashok</span></div></div>
-        <div class="contact-item"><div class="contact-icon">RK</div><div><strong>Co-Founder</strong><span>R. Ramkalyan</span></div></div>
+        <h3>Recruitment Desk</h3>
+        <div class="contact-item"><div class="contact-icon">IT</div><div><strong>IT Recruitment</strong><span>Technology, software, data, support and related roles.</span></div></div>
+        <div class="contact-item"><div class="contact-icon">NI</div><div><strong>Non-IT Recruitment</strong><span>Operations, sales, HR, finance, support and professional roles.</span></div></div>
+        <div class="contact-item"><div class="contact-icon">M</div><div><strong>MNC Opportunities</strong><span>Relevant MNC and Indian-company hiring requirements are maintained in the recruitment database.</span></div></div>
       </div>
     </div>
   </div>
@@ -556,6 +584,49 @@ window.addEventListener('scroll',()=>{
   header.classList.toggle('scrolled',window.scrollY>30);
 });
 
+/* Nexora job filters */
+const jobSearch=document.getElementById('jobSearch');
+const sectorFilter=document.getElementById('sectorFilter');
+const companyTypeFilter=document.getElementById('companyTypeFilter');
+const experienceFilter=document.getElementById('experienceFilter');
+const locationFilter=document.getElementById('locationFilter');
+const jobCards=[...document.querySelectorAll('#jobsGrid .job:not(#jobEmpty)')];
+const jobEmpty=document.getElementById('jobEmpty');
+function filterJobs(){
+  const q=(jobSearch?.value||'').toLowerCase().trim();
+  const sector=sectorFilter?.value||'';
+  const company=companyTypeFilter?.value||'';
+  const exp=experienceFilter?.value||'';
+  const loc=(locationFilter?.value||'').toLowerCase().trim();
+  let visible=0;
+  jobCards.forEach(card=>{
+    const hay=(card.innerText+' '+card.dataset.location).toLowerCase();
+    const ok=(!q||hay.includes(q))
+      &&(!sector||card.dataset.sector===sector)
+      &&(!company||card.dataset.company.includes(company))
+      &&(!exp||card.dataset.experience.includes(exp))
+      &&(!loc||card.dataset.location.toLowerCase().includes(loc));
+    card.style.display=ok?'':'none';
+    if(ok) visible++;
+  });
+  if(jobEmpty) jobEmpty.style.display=visible?'none':'';
+}
+[jobSearch,sectorFilter,companyTypeFilter,experienceFilter,locationFilter].forEach(el=>el&&el.addEventListener('input',filterJobs));
+
+/* Paste the public Airtable Candidate Application URL here. */
+const NEXORA_AIRTABLE_FORM_URL='PASTE_YOUR_PUBLIC_AIRTABLE_FORM_URL_HERE';
+const formLink=document.getElementById('airtableFormLink');
+if(formLink && NEXORA_AIRTABLE_FORM_URL.startsWith('http')){
+  formLink.href=NEXORA_AIRTABLE_FORM_URL;
+}else if(formLink){
+  formLink.addEventListener('click',e=>{
+    if(!NEXORA_AIRTABLE_FORM_URL.startsWith('http')){
+      e.preventDefault();
+      alert('Nexora admin: add the public Airtable Candidate Application URL in the website code first.');
+    }
+  });
+}
+
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -569,3 +640,4 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 </body>
 </html>
+Zoomed out of item
