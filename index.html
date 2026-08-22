@@ -37,7 +37,7 @@ body:before{
 }
 header{
   position:fixed;top:0;left:0;width:100%;z-index:1000;
-  background:rgba(7,22,36,.78);backdrop-filter:blur(18px);
+  background:rgba(7,22,36,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   border-bottom:1px solid rgba(255,255,255,.09);transition:.45s;
 }
 header.scrolled{background:rgba(7,22,36,.94);box-shadow:0 12px 40px rgba(0,0,0,.18)}
@@ -138,12 +138,12 @@ section{padding:105px 5%}
   min-height:490px;border-radius:26px;overflow:hidden;position:relative;
   background:
     linear-gradient(135deg,rgba(4,27,44,.15),rgba(4,27,44,.42)),
-    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1300&q=88");
+    linear-gradient(145deg,#071b2b,#0a3d52 55%,#0c1b29);
   background-size:cover;background-position:center;box-shadow:var(--shadow);
 }
 .visual:before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.4);border-radius:19px}
 .float-card{
-  position:absolute;left:24px;bottom:24px;background:rgba(5,25,40,.82);backdrop-filter:blur(15px);
+  position:absolute;left:24px;bottom:24px;background:rgba(5,25,40,.82);backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:17px 20px;color:#fff;
   animation:cardFloat 4s ease-in-out infinite
 }
@@ -187,7 +187,7 @@ section{padding:105px 5%}
   color:#fff;background:
   linear-gradient(120deg,rgba(3,18,31,.96),rgba(7,52,78,.92)),
   url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1900&q=88");
-  background-size:cover;background-position:center;background-attachment:fixed
+  background-size:cover;background-position:center;background-attachment:scroll
 }
 .why .section-head p{color:#b6cad8}.why .eyebrow{color:#62ddff}.why .section-head h2{color:#fff}
 .why .card{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.13);backdrop-filter:blur(10px);color:#fff}
@@ -297,345 +297,20 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
   .founder{padding:20px}.form-wrap{padding:22px 17px;border-radius:20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
   .submit-row{align-items:stretch;flex-direction:column}.submit-row .btn{width:100%}
 }
+
 </style>
-</head>
-
-<body>
-
-<header id="header">
-  <div class="nav">
-    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
-
-    <nav id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#jobs">Opportunities</a>
-      <a href="#apply">Apply</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="brand" href="#home" aria-label="Nexora Consultancy 2026">
-      <div class="logo" aria-hidden="true"><span>N</span></div>
-      <div class="brand-text">
-        <strong>NEXORA <b>CONSULTANCY</b></strong>
-        <small>CONSULTANCY 2026</small>
-      </div>
-    </a>
-  </div>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-  <div class="gridglow"></div>
-  <div class="hero-inner">
-    <div class="kicker"><i></i> PROFESSIONAL CAREER & TALENT SOLUTIONS</div>
-    <h1>Building Careers.<br><span>Connecting Talent.</span></h1>
-    <h2>NEXORA CONSULTANCY 2026</h2>
-    <p>Professional recruitment, placement, training and career solutions designed to connect capable people with the right opportunities across IT and Non-IT sectors.</p>
-
-    <div class="actions">
-      <a class="btn primary" href="#apply">Submit Your Requirement</a>
-      <a class="btn ghost" href="#jobs">Explore Opportunities</a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat"><strong>IT + Non-IT</strong><span>Recruitment Focus</span></div>
-      <div class="stat"><strong>Career First</strong><span>Candidate Approach</span></div>
-      <div class="stat"><strong>Professional</strong><span>Talent Solutions</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Who We Are</div>
-      <h2>More Than Recruitment.<br>A Career Partnership.</h2>
-      <p>Structured, professional support for candidates and organizations looking for the right fit.</p>
-    </div>
-
-    <div class="about-grid">
-      <div class="visual reveal">
-        <div class="float-card"><strong>NEXORA</strong><small>Connecting people with opportunity.</small></div>
-      </div>
-      <div class="about-copy reveal">
-        <h3>Focused on people, driven by opportunity.</h3>
-        <div class="line"></div>
-        <p>Nexora Consultancy works across recruitment, placement, training and career support. Our objective is simple: understand the requirement first, evaluate the profile properly, and then move toward the right opportunity.</p>
-        <p>Whether you are a candidate searching for your next role or an organization looking for suitable talent, our process is designed to keep communication structured and professional.</p>
-        <a class="btn primary" href="#apply">Start With Your Details</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">What We Do</div>
-      <h2>Professional Solutions.<br>Clear Outcomes.</h2>
-      <p>Services designed around the actual requirement instead of a one-size-fits-all approach.</p>
-    </div>
-
-    <div class="cards">
-      <article class="card reveal"><div class="icon">01</div><h3>Recruitment</h3><p>Candidate sourcing and profile coordination for suitable IT and Non-IT requirements.</p></article>
-      <article class="card reveal"><div class="icon">02</div><h3>Placement Services</h3><p>Structured support from requirement collection through interview and joining coordination.</p></article>
-      <article class="card reveal"><div class="icon">03</div><h3>Career Solutions</h3><p>Professional guidance for candidates evaluating their next career opportunity.</p></article>
-      <article class="card reveal"><div class="icon">04</div><h3>Training Support</h3><p>Career-oriented learning and preparation support aligned with relevant opportunities.</p></article>
-      <article class="card reveal"><div class="icon">05</div><h3>Talent Acquisition</h3><p>Support for organizations seeking suitable profiles for their hiring requirements.</p></article>
-      <article class="card reveal"><div class="icon">06</div><h3>Profile Evaluation</h3><p>Initial requirement and profile review before moving forward with an opportunity.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="why">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Why Nexora</div>
-      <h2>A More Structured Way To Connect.</h2>
-      <p>Professional presentation, organized requirements and focused communication.</p>
-    </div>
-
-    <div class="cards">
-      <article class="card reveal"><div class="icon">✓</div><h3>Requirement First</h3><p>We collect the relevant details before approaching the next step.</p></article>
-      <article class="card reveal"><div class="icon">↗</div><h3>Opportunity Focused</h3><p>Profiles and requirements are aligned with the opportunity instead of random outreach.</p></article>
-      <article class="card reveal"><div class="icon">◈</div><h3>Professional Process</h3><p>Clear application flow and structured communication create a better experience.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="process">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">How It Works</div>
-      <h2>Simple. Structured. Professional.</h2>
-    </div>
-
-    <div class="process-grid">
-      <div class="step reveal"><div class="num">01</div><h3>Submit</h3><p>Share your requirement.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3>Review</h3><p>We review the details.</p></div>
-      <div class="step reveal"><div class="num">03</div><h3>Connect</h3><p>We contact suitable profiles.</p></div>
-      <div class="step reveal"><div class="num">04</div><h3>Interview</h3><p>Move toward the opportunity.</p></div>
-      <div class="step reveal"><div class="num">05</div><h3>Progress</h3><p>Coordinate the next stage.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="jobs" id="jobs">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Live Opportunities</div>
-      <h2>Find Your Next Opportunity.</h2>
-      <p>Browse opportunities by sector, company type, location and experience. Job availability is managed from the Nexora recruitment database.</p>
-    </div>
-
-    <div class="job-filters reveal">
-      <input id="jobSearch" type="search" placeholder="Search job title, company or skill">
-      <select id="sectorFilter">
-        <option value="">All Sectors</option>
-        <option value="IT">IT</option>
-        <option value="Non-IT">Non-IT</option>
-      </select>
-      <select id="companyTypeFilter">
-        <option value="">All Company Types</option>
-        <option value="MNC">MNC</option>
-        <option value="Indian Company">Indian Company</option>
-        <option value="Startup">Startup</option>
-      </select>
-      <select id="experienceFilter">
-        <option value="">All Experience Levels</option>
-        <option value="Fresher">Fresher</option>
-        <option value="0-2 Years">0-2 Years</option>
-        <option value="2-5 Years">2-5 Years</option>
-        <option value="5+ Years">5+ Years</option>
-      </select>
-      <input id="locationFilter" type="search" placeholder="Location">
-    </div>
-
-    <div id="jobPortalStatus" class="job-portal-status reveal">
-      <strong>Nexora Recruitment Database</strong>
-      <span>Live job records will appear here when the Airtable Jobs view is connected.</span>
-    </div>
-
-    <div class="jobs-grid" id="jobsGrid">
-      <article class="job reveal" data-sector="IT" data-company="MNC" data-experience="Fresher 0-2 Years" data-location="Hyderabad Bengaluru Chennai Pune">
-        <div class="job-top"><h3>IT Opportunities</h3><span class="tag">LIVE DATABASE</span></div>
-        <p>Software, testing, support, data, cloud, development and other technology-oriented requirements.</p>
-        <a class="apply" href="#apply">Check & Apply →</a>
-      </article>
-      <article class="job reveal" data-sector="Non-IT" data-company="MNC Indian Company" data-experience="Fresher 0-2 Years 2-5 Years 5+ Years" data-location="Hyderabad Bengaluru Chennai Pune Delhi Mumbai">
-        <div class="job-top"><h3>Non-IT Opportunities</h3><span class="tag">LIVE DATABASE</span></div>
-        <p>Operations, sales, HR, finance, customer support, administration and other professional requirements.</p>
-        <a class="apply" href="#apply">Check & Apply →</a>
-      </article>
-      <article class="job job-empty" id="jobEmpty" style="display:none">
-        <div class="job-top"><h3>No matching opportunity</h3><span class="tag">SEARCH</span></div>
-        <p>Try changing the sector, company type, experience level or location.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="apply-section" id="apply">
-  <div class="container">
-    <div class="form-wrap reveal">
-      <div class="form-head">
-        <div class="eyebrow">Nexora Candidate Application</div>
-        <h2>Tell Us What You Need.</h2>
-        <p>Submit your complete profile and job preferences. Our recruitment team will review the requirement and contact you regarding the next step.</p>
-      </div>
-
-      <div class="candidate-notice">
-        <strong>Candidate information collected</strong>
-        <span>Name • Mobile • Email • Resume • Job Role • IT/Non-IT • MNC/Indian Company • Experience Level • Current Location • Preferred Job Location • Skills • Domain • Previous Salary • Expected Salary • Other requirements</span>
-      </div>
-
-      <div class="candidate-easy-panel">
-        <div class="candidate-easy-head">
-          <div class="airtable-icon">N</div>
-          <div>
-            <h3>Easy Candidate Application</h3>
-            <p>We are structuring the application so candidates can enter their requirement quickly and accurately.</p>
-          </div>
-        </div>
-        <div class="easy-grid">
-          <div><strong>Experience</strong><span>Fresher • 0–2 Years • 2–5 Years • 5+ Years</span></div>
-          <div><strong>Location</strong><span>Search by city name or abbreviation, e.g. HYD → Hyderabad, VIZ → Visakhapatnam.</span></div>
-          <div><strong>Company</strong><span>Search company names by the first letters instead of scrolling through a long list.</span></div>
-          <div><strong>Salary</strong><span>Enter the amount and use standard Indian-number formatting such as ₹1,10,000.</span></div>
-        </div>
-        <div class="easy-note"><b>Important:</b> These smart search and formatting behaviours must be configured in the candidate form itself. The public Airtable form cannot be modified from this website code.</div>
-      </div>
-
-      <div class="airtable-connect">
-        <div class="airtable-icon">↗</div>
-        <div>
-          <h3>Nexora Candidate Application</h3>
-          <p>Your private Airtable database stays private. Candidates only receive the public application form.</p>
-        </div>
-      </div>
-
-      <a class="btn primary form-link" id="airtableFormLink" href="#" target="_blank" rel="noopener">Open Candidate Application →</a>
-      <p class="form-connect-note">Admin note: replace the form link in the website code with the public Airtable Candidate Application URL. Keep the Airtable base private; only the candidate form should be public.</p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Contact</div>
-      <h2>Start With The Right Information.</h2>
-      <p>For a better response, use the application form above and provide your requirement first.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-box reveal">
-        <h3>Nexora Consultancy 2026</h3>
-        <div class="contact-item"><div class="contact-icon">✉</div><div><strong>Email</strong><a href="mailto:nexoratalent2.0@gmail.com">nexoratalent2.0@gmail.com</a></div></div>
-        <div class="contact-item"><div class="contact-icon">◎</div><div><strong>Instagram</strong><a href="https://www.instagram.com/nexoratalentsolutions2.o/" target="_blank" rel="noopener">Nexora Consultancy</a></div></div>
-        <div class="contact-item"><div class="contact-icon">⌁</div><div><strong>Application</strong><span>Submit your requirement through the application desk.</span></div></div>
-      </div>
-
-      <div class="contact-box reveal">
-        <h3>Recruitment Desk</h3>
-        <div class="contact-item"><div class="contact-icon">IT</div><div><strong>IT Recruitment</strong><span>Technology, software, data, support and related roles.</span></div></div>
-        <div class="contact-item"><div class="contact-icon">NI</div><div><strong>Non-IT Recruitment</strong><span>Operations, sales, HR, finance, support and professional roles.</span></div></div>
-        <div class="contact-item"><div class="contact-icon">M</div><div><strong>MNC Opportunities</strong><span>Relevant MNC and Indian-company hiring requirements are maintained in the recruitment database.</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="social">
-  <div class="container">
-    <h2>Connect With Nexora</h2>
-    <p>Professional applications first. Direct social contact is optional.</p>
-    <div class="socials">
-      <a class="ig" href="https://www.instagram.com/nexoratalentsolutions2.o/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-      <a class="mail" href="mailto:nexoratalent2.0@gmail.com" aria-label="Email">✉</a>
-      <a class="wa" href="#apply" aria-label="Application">✓</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="footer-brand">NEXORA <b>CONSULTANCY</b></div>
-  <p>CONSULTANCY 2026 • Training • Placement • Recruitment • Career Solutions</p>
-  <div class="copyright">© 2026 Nexora Consultancy. All rights reserved.</div>
-</footer>
-
-<script>
-const header=document.getElementById('header');
-const menuBtn=document.getElementById('menuBtn');
-const nav=document.getElementById('navLinks');
-
-menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-
-window.addEventListener('scroll',()=>{
-  header.classList.toggle('scrolled',window.scrollY>30);
-});
-
-/* Nexora job filters */
-const jobSearch=document.getElementById('jobSearch');
-const sectorFilter=document.getElementById('sectorFilter');
-const companyTypeFilter=document.getElementById('companyTypeFilter');
-const experienceFilter=document.getElementById('experienceFilter');
-const locationFilter=document.getElementById('locationFilter');
-const jobCards=[...document.querySelectorAll('#jobsGrid .job:not(#jobEmpty)')];
-const jobEmpty=document.getElementById('jobEmpty');
-function filterJobs(){
-  const q=(jobSearch?.value||'').toLowerCase().trim();
-  const sector=sectorFilter?.value||'';
-  const company=companyTypeFilter?.value||'';
-  const exp=experienceFilter?.value||'';
-  const loc=(locationFilter?.value||'').toLowerCase().trim();
-  let visible=0;
-  jobCards.forEach(card=>{
-    const hay=(card.innerText+' '+card.dataset.location).toLowerCase();
-    const ok=(!q||hay.includes(q))
-      &&(!sector||card.dataset.sector===sector)
-      &&(!company||card.dataset.company.includes(company))
-      &&(!exp||card.dataset.experience.includes(exp))
-      &&(!loc||card.dataset.location.toLowerCase().includes(loc));
-    card.style.display=ok?'':'none';
-    if(ok) visible++;
-  });
-  if(jobEmpty) jobEmpty.style.display=visible?'none':'';
-}
-[jobSearch,sectorFilter,companyTypeFilter,experienceFilter,locationFilter].forEach(el=>el&&el.addEventListener('input',filterJobs));
-
-/* Paste the public Airtable Candidate Application URL here. */
-const NEXORA_AIRTABLE_FORM_URL='PASTE_YOUR_PUBLIC_AIRTABLE_FORM_URL_HERE';
-const formLink=document.getElementById('airtableFormLink');
-if(formLink && NEXORA_AIRTABLE_FORM_URL.startsWith('http')){
-  formLink.href=NEXORA_AIRTABLE_FORM_URL;
-}else if(formLink){
-  formLink.addEventListener('click',e=>{
-    if(!NEXORA_AIRTABLE_FORM_URL.startsWith('http')){
-      e.preventDefault();
-      alert('Nexora admin: add the public Airtable Candidate Application URL in the website code first.');
-    }
-  });
-}
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-</script>
-
-</body>
-</html>
+<style>
+/* ===== NEXORA CINEMATIC VFX BRAND FINALE ===== */
+.vfx-footer{position:relative;min-height:620px;overflow:hidden;background:
+ radial-gradient(circle at 50% 42%,rgba(22,139,165,.18),transparent 30%),
+ radial-gradient(circle at 18% 75%,rgba(218,171,70,.12),transparent 24%),
+ linear-gradient(145deg,#02050b 0%,#061320 48%,#02050b 100%);color:#fff;border-top:1px solid rgba(255,255,255,.1)}
+.vfx-footer:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(39,212,230,.035) 50%,transparent 100%);animation:vfxBreath 7s ease-in-out infinite}
+#vfxCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+.footer-content{position:relative;z-index:3;max-width:1100px;margin:auto;padding:80px 24px 35px;text-align:center}
+.footer-kicker{font-size:10px;letter-spacing:5px;color:#9eb5c0;font-weight:800;display:flex;align-items:center;justify-content:center;gap:15px}
+.footer-kicker span{width:58px;height:1px;background:linear-gradient(90deg,transparent,#d7b35b)}
+.footer-kicker span:last-child{background:linear-gradient(90deg,#d7b35b,transparent)}
+.footer-logo-stage{height:280px;position:relative;display:grid;place-items:center;perspective:900px}
+.footer-mark{width:88px;height:88px;border-radius:28px;display:grid;place-items:center;position:absolute;top:40px;z-index:4;background:linear-gradient(145deg,#071c2b,#0d6c82 60%,#22d1dd);border:1px solid rgba(255,255,255,.24);box-shadow:0 0 0 1px rgba(215,179,91,.12),0 0 55px rgba(28,210,227,.35),inset 0 2px 12px rgba(255,255,255,.2);transform:translateZ(50px) rotateX(8deg);animation:markFloat 4s ease-in-out infinite}
+.footer-mark
