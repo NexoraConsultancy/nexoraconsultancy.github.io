@@ -351,6 +351,92 @@ footer p{font-size:11px;margin-top:8px;color:#91a6b6}.copyright{margin-top:22px;
   .submit-row{align-items:stretch;flex-direction:column}.submit-row .btn{width:100%}
 }
 
+
+
+/* ===== NEXORA ABOUT VISUAL — SINGLE COMPANY OVERVIEW ===== */
+.nexora-overview-visual{
+  min-height:420px!important;
+  padding:28px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:
+    radial-gradient(circle at 18% 15%,rgba(53,223,240,.12),transparent 30%),
+    linear-gradient(145deg,#102432,#162d3a 52%,#0d1b25)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  box-shadow:0 18px 45px rgba(7,30,42,.18)!important;
+  overflow:hidden!important;
+}
+.nexora-overview-card{
+  width:100%;
+  max-width:520px;
+  padding:26px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:24px;
+  background:rgba(5,16,25,.72);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  color:#fff;
+}
+.nexora-overview-top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.nexora-mini-logo{
+  width:54px;height:54px;border-radius:16px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,#0b5e76,#163646);
+  border:1px solid rgba(53,223,240,.45);
+  box-shadow:0 8px 22px rgba(53,223,240,.12);
+}
+.nexora-mini-logo span{
+  font-size:27px;font-weight:900;color:#fff;
+  text-shadow:1px 2px 0 #0a7188,0 0 12px rgba(53,223,240,.35);
+}
+.nexora-overview-top strong{
+  display:block;font-size:18px;letter-spacing:1.5px;color:#fff;
+}
+.nexora-overview-top small{
+  display:block;margin-top:5px;color:#a9bdc7;font-size:10px;letter-spacing:1.3px;
+}
+.nexora-overview-title{padding:20px 0 15px}
+.nexora-overview-title span{
+  display:block;font-size:10px;letter-spacing:2px;color:#35dff0;font-weight:800;margin-bottom:7px;
+}
+.nexora-overview-title b{
+  display:block;font-size:17px;line-height:1.45;color:#f5fbfd;
+}
+.nexora-overview-flow{display:grid;gap:10px}
+.overview-step{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 12px;border-radius:13px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.08);
+}
+.overview-step i{
+  flex:0 0 32px;width:32px;height:32px;border-radius:10px;
+  display:grid;place-items:center;font-style:normal;
+  font-size:10px;font-weight:900;color:#0d2029;background:#35dff0;
+}
+.overview-step b{display:block;font-size:12px;color:#fff}
+.overview-step small{display:block;margin-top:2px;font-size:10px;color:#a9bdc7}
+.nexora-overview-bottom{
+  display:flex;flex-wrap:wrap;gap:7px;margin-top:17px;padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.nexora-overview-bottom span{
+  font-size:9px;letter-spacing:.4px;color:#d9e7eb;
+  padding:6px 8px;border-radius:999px;background:rgba(53,223,240,.08);
+  border:1px solid rgba(53,223,240,.16);
+}
+@media(max-width:600px){
+  .nexora-overview-visual{min-height:390px!important;padding:18px!important}
+  .nexora-overview-card{padding:20px;border-radius:20px}
+  .nexora-overview-title b{font-size:15px}
+  .nexora-overview-top strong{font-size:15px}
+}
 </style>
 <style>
 /* ===== NEXORA CINEMATIC VFX BRAND FINALE ===== */
@@ -528,8 +614,42 @@ section:before,section:after{animation:none!important}
     </div>
 
     <div class="about-grid">
-      <div class="visual reveal">
-        <div class="float-card"><strong>NEXORA</strong><small>Connecting people with opportunity.</small></div>
+      <div class="visual reveal nexora-overview-visual" aria-label="Nexora Consultancy overview">
+        <div class="nexora-overview-card">
+          <div class="nexora-overview-top">
+            <div class="nexora-mini-logo"><span>N</span></div>
+            <div>
+              <strong>NEXORA CONSULTANCY</strong>
+              <small>Recruitment • Placement • Career Support</small>
+            </div>
+          </div>
+
+          <div class="nexora-overview-title">
+            <span>HOW WE WORK</span>
+            <b>Right Profile → Right Opportunity → Successful Onboarding</b>
+          </div>
+
+          <div class="nexora-overview-flow">
+            <div class="overview-step">
+              <i>01</i><div><b>Understand</b><small>Requirement &amp; career goal</small></div>
+            </div>
+            <div class="overview-step">
+              <i>02</i><div><b>Evaluate</b><small>Profile &amp; opportunity fit</small></div>
+            </div>
+            <div class="overview-step">
+              <i>03</i><div><b>Process</b><small>Guidance, coordination &amp; updates</small></div>
+            </div>
+            <div class="overview-step">
+              <i>04</i><div><b>Onboard</b><small>Support up to joining stage</small></div>
+            </div>
+          </div>
+
+          <div class="nexora-overview-bottom">
+            <span>✓ Clear Process</span>
+            <span>✓ Candidate Support</span>
+            <span>✓ Transparent Terms</span>
+          </div>
+        </div>
       </div>
       <div class="about-copy reveal">
         <h3>Focused on people, driven by opportunity.</h3>
